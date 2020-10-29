@@ -3,7 +3,7 @@ permalink: /
 title: "AD"
 excerpt: "Delgado"
 author_profile: true
-redirect_from: 
+redirect_from:
   - /prfls/
   - /ad.html
 ---
