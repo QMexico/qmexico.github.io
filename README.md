@@ -7,3 +7,9 @@ Archivos:
 - events.html
 - About.html
 - team.html
+
+## TODO
+- Incluir otros perfiles
+- Mejorar el mapa del sitio
+- Ver CSS y otros archivos de configuración
+- Introducir web científicos: https://www.quantumdiaries.org/
