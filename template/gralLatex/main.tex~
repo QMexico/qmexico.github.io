@@ -1,0 +1,44 @@
+\documentclass{beamer}
+\usepackage{graphicx}
+\usepackage{tikz}
+
+\pgfdeclareimage[width=\paperwidth]{mybackground}{../figs/logoB.png}
+%% As an option to frame
+\defbeamertemplate*{background canvas}{mydefault}{%
+  \ifbeamercolorempty[bg]{background canvas}{}{\color{bg}\vrule width\paperwidth height\paperheight}}
+\defbeamertemplate*{background canvas}{image}
+{%
+    \begin{tikzpicture}
+        \useasboundingbox (0,0) rectangle (\the\paperwidth, \the\paperheight); 
+        \pgftext[at=\pgfpoint{0cm}{6cm}, left, base]{\pgfsetfillopacity{0.6}\pgfuseimage{mybackground}}; 
+    \end{tikzpicture}
+}
+\BeforeBeginEnvironment{frame}{%
+  \setbeamertemplate{background canvas}[mydefault]%
+}
+\makeatletter
+\define@key{beamerframe}{image}[true]{%
+  \setbeamercovered{invisible}%
+  \setbeamertemplate{background canvas}[image]%
+}
+\makeatother%
+
+
+\title[...]{My title}
+\subtitle{XXXX}
+\author{XXXX}
+
+\begin{document}
+
+\begin{frame}[image]
+    \titlepage
+\end{frame}
+
+\section{Introduction}
+
+\setbeamercolor{}{background}{bg=yellow!20}
+\begin{frame}[image]
+Text here
+\end{frame}
+
+\end{document}

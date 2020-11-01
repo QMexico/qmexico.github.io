@@ -1,0 +1,76 @@
+\documentclass{beamer}
+\usepackage{graphicx}
+\usepackage{tikz}
+\pgfdeclareimage[width=\paperwidth]{mybackground}{../figs/logoH.png}
+
+%% As an option to frame
+\defbeamertemplate*{background canvas}{mydefault}{%
+  \ifbeamercolorempty[bg]{background canvas}{}{\color{bg}\vrule width\paperwidth height\paperheight}}
+\defbeamertemplate*{background canvas}{image}
+{%
+    \begin{tikzpicture}
+      \useasboundingbox (0,0) rectangle(
+      \the\paperwidth, \the\paperheight);
+      % {cx}{cy} cambia la siguiente linea en los valores cx y cy
+        \pgftext[at=\pgfpoint{0cm}{0cm}, left, base]{
+          \pgfsetfillopacity{0.1}\pgfuseimage{mybackground}
+        }; 
+    \end{tikzpicture}
+}
+\BeforeBeginEnvironment{frame}{%
+  \setbeamertemplate{background canvas}[mydefault]%
+}
+\makeatletter
+\define@key{beamerframe}{image}[true]{%
+  \setbeamercovered{invisible}%
+  \setbeamertemplate{background canvas}[image]%
+}
+\makeatother%
+
+\usepackage[utf8]{inputenc}
+
+
+% Puedes modificar estas lineas
+% Inicio
+\usetheme{bookman}%{Madrid}%{Dresden}
+\usecolortheme{beaver}
+\setbeamercolor{itemize item}{fg=darkred!80!black}
+%fin
+
+
+
+\title[...]{My title}
+\subtitle{XXXX}
+\author{XXXX}
+\date{\tiny\today}
+\institute[VFU]
+{
+  \inst{1}%
+  Faculty of Physics\\
+  Very Famous University
+  \and
+  \inst{2}%
+  Faculty of Chemistry\\
+  Very Famous University
+}
+
+\begin{document}
+
+\begin{frame}[image]
+    \titlepage
+\end{frame}
+
+\begin{frame}[image]
+  \tableofcontents
+\end{frame}
+
+
+\section{Introduction}
+  \begin{frame}[image]
+    Text here
+    Text here
+    Text here
+    Text here
+  \end{frame}
+
+\end{document}

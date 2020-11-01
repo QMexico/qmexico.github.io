@@ -13,3 +13,4 @@ Archivos:
 - Mejorar el mapa del sitio
 - Ver CSS y otros archivos de configuración
 - Introducir web científicos: https://www.quantumdiaries.org/
+- colocar politica de privacidad

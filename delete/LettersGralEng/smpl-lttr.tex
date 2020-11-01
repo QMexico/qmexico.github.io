@@ -1,0 +1,67 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2013 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[12pt,a4paper,sans]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+% moderncv themes
+\moderncvstyle{oldstyle} %classic                            % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+%\moderncvcolor{} % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+\usepackage[document]{ragged2e}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[left=2.5cm, top=3cm, right=0.5cm, bottom=3cm]{geometry}
+\usepackage{ifthen}	
+\usepackage{pstricks}
+\usepackage{url}
+\usepackage{fontawesome5}
+\PassOptionsToPackage{hyphens}{url}
+\usepackage{datatool}
+\DTLloaddb{names}{srvcSclLst.csv}
+
+
+%\def\tlphn{~~} 
+\def\DatetodayLetter{October 30, 2020} 
+\def\institution{\nameBoss}
+\def\alias{\inCharge}
+\def\fechAct{\DatetodayLetter}
+\name{Q|}{Mexico$\rangle$}
+\email{\\qmexico@protonmail.com}
+\homepage{\\http://qmexico.org}    
+\extrainfo{Folio:\\ \NumFolio\\[10mm]
+Follow\\
+\faFacebookF {\href{https://www.facebook.com/qmexico42}{QMexico}}\\[2mm]
+\faTwitter {\href{https://twitter.com/_QMexico}{QMexico}}\\[5mm]
+\faSlack {\href{https://cutt.ly/jy3LiLD}{QWorld}} \\[2mm]
+\faYoutube {\href{https://youtube.com/qworld19}{QWorld}}  \\[2mm]
+\faFacebookF {\href{https://facebook.com/QWorld19}{QWorld}}  \\[2mm]
+\faTwitter {\href{https://twitter.com/QWorld19}{QWorld}}  \\[2mm]
+{\url{https://qworld.lu.lv}}\\[2mm]
+}  
+
+\sloppy
+\begin{document}
+\DTLforeach{names}{
+\nameBoss=nameBoss, 
+\inCharge=inCharge,
+\NumFolio=NumFolio}{
+{
+
+%\ifthenelse{\equal{\ChLangRL}{Eng}}{
+\include{textRLttrGral}
+%}{}
+}
+\pagebreak
+\newpage
+}
+
+\end{document}
+
+
+%% end of file `template.tex'.
