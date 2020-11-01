@@ -9,3 +9,6 @@ los archivos de las diapositivas
 	- https://hartwork.org/beamer-theme-matrix/
 	- https://www.overleaf.com/gallery/tagged/presentation
 	- https://www.overleaf.com/learn/latex/beamer
+1. Para cambiar el título y demás datos generales ve a main.tex
+1. Para colocar información en el cuerpo de la presentación, ve a body.tex
+1. Revisa tu PDF en la carpeta PDFDocs

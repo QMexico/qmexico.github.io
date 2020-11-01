@@ -1,0 +1,14 @@
+#!/bin/bash 
+
+
+pdflatex -jobname=PDFDocs/main -shell-escape gralLatex/main.tex
+pdflatex -jobname=PDFDocs/main -shell-escape gralLatex/main.tex
+cd PDFDocs/
+rm *.snm *.nav *.aux *.log *.out *.toc
+cd ..
+# 
+echo ""
+echo "Go to "
+echo " PDFDocs folder" 
+echo ""
+echo ""
